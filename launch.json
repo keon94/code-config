@@ -1,0 +1,39 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug JS (Node)",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${file}"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug TS (Node)",
+            "program": "${file}",
+            "runtimeExecutable": "${fileDirname}/node_modules/.bin/ts-node",
+            "runtimeArgs": [
+                "--transpile-only",
+                "--esm"
+            ],
+            "internalConsoleOptions": "openOnSessionStart",
+            "skipFiles": [
+                "<node_internals>/**",
+                "node_modules/**"
+            ],
+        },
+        {
+            "type": "chrome",
+            "name": "Debug Chrome",
+            "request": "launch",
+            "url": "http://127.0.0.1:3000/${relativeFile}",
+        }
+    ]
+}
